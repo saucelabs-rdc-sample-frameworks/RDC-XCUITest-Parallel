@@ -1,0 +1,59 @@
+---
+# Test framework: "xcuitest" or "espresso"
+testFramework: xcuitest
+ 
+# Path to the app's .ipa or .app.
+app: ./DummyTestingApp.ipa
+ 
+# Path to the test runner app's .ipa or .app.
+test: ./DummyTestingApp-Runner.ipa
+ 
+# Path where XML test reports will be saved.
+xmlFolder: ./
+
+# Define a list of devices on which the tests should be executed.
+devices:
+ 
+# Device 1
+- datacenter: US
+  # Specify a device descriptor for static allocation f.ex. iPhone_8_real_us.
+  deviceNameQuery: iPhone 7
+  platformVersion: 11
+  testsToRun:
+  - testClass: DummyTestingAppUITests
+    testMethod: testExample
+
+  # Optional parameters, set to true to enable.
+  # phoneOnly: false
+  # tabletOnly: false
+  # privateDevicesOnly: false
+ 
+# Device 2
+
+- datacenter: US
+  # Specify a device descriptor for static allocation f.ex. iPhone_8_real_us.
+  deviceNameQuery: iPhone 8
+  platformVersion: 11
+  testsToRun:
+  - testClass: DummyTestingAppUITests
+    testMethod: testExample2
+
+  # Optional parameters, set to true to enable.
+  # phoneOnly: false
+  # tabletOnly: false
+  # privateDevicesOnly: false
+
+# Device 3
+
+- datacenter: US
+  # Specify a device descriptor for static allocation f.ex. iPhone_8_real_us.
+  deviceNameQuery: iPhone.*
+  platformVersion: 11
+  testsToRun:
+  - testClass: DummyTestingAppUITests
+    testMethod: testTheDude
+
+  # Optional parameters, set to true to enable.
+  # phoneOnly: false
+  # tabletOnly: false
+  # privateDevicesOnly: false
